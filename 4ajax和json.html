@@ -1,0 +1,23 @@
+<script>
+    var xmlhttp;
+    xmlhttp = CreateXHR();
+    xmlhttp.open('GET',"test.json",true);
+    xmlhttp.send();
+    xmlhttp.onreadystatechange = function(){
+        if(xmlhttp.readyState ==4 && xmlhttp.status == 200){
+            var jsonstr = xmlhttp.responseText;
+            console.log(jsonstr);
+            var obj = JSON.parse(jsonstr);
+            console.log(obj);
+        }
+    }
+    function CreateXHR(){
+        if(window.XMLhttpRequest){
+            //IE7++,Chrome,Firefox,..
+            return new XMLHttpRequest();
+        }else{
+            //IE6,IE5
+            return new ActiveXObject('Microsoft.XMLHTTP');
+        }
+    }
+</script>

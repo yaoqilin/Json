@@ -1,0 +1,27 @@
+<!--将js的值转化为json字符串过程-->
+<script>
+    // var obj = {
+    //     name:"yaoqilin",
+    //     age:24,
+    //     a:undefined,
+    //     f:function(){
+
+    //     },
+    //     b:[function(){
+
+    //     }]
+    // }
+    // console.log(obj);
+    // var jsonstr = JSON.stringify(obj);
+    // console.log(jsonstr);
+    var obj ={
+        a:1,
+        b:2,
+        c:3,
+        d:4
+    };
+    console.log(obj);
+    // "\t"制表符 易读化
+    var jsonstr = JSON.stringify(obj,["c","a","b"],"\t");
+    console.log(jsonstr);
+</script>
